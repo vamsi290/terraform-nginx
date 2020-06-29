@@ -1,0 +1,75 @@
+root@ip-172-31-49-2:/home/ubuntu/eks# terraform apply
+aws_iam_role.eks_nodes: Refreshing state... [id=eks-node-group-tuto]
+aws_iam_role.eks_cluster: Refreshing state... [id=eks-cluster]
+aws_eks_cluster.aws_eks: Refreshing state... [id=eks_cluster_tuto]
+aws_iam_role_policy_attachment.AmazonEKSClusterPolicy: Refreshing state... [id=eks-cluster-20200629053712151400000005]
+aws_iam_role_policy_attachment.AmazonEKSServicePolicy: Refreshing state... [id=eks-cluster-20200629053712147600000004]
+aws_iam_role_policy_attachment.AmazonEKSWorkerNodePolicy: Refreshing state... [id=eks-node-group-tuto-20200629053712128900000003]
+aws_iam_role_policy_attachment.AmazonEC2ContainerRegistryReadOnly: Refreshing state... [id=eks-node-group-tuto-20200629053712122800000001]
+aws_iam_role_policy_attachment.AmazonEKS_CNI_Policy: Refreshing state... [id=eks-node-group-tuto-20200629053712127300000002]
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_eks_node_group.node will be created
+  + resource "aws_eks_node_group" "node" {
+      + ami_type        = (known after apply)
+      + arn             = (known after apply)
+      + cluster_name    = "eks_cluster_tuto"
+      + disk_size       = (known after apply)
+      + id              = (known after apply)
+      + instance_types  = (known after apply)
+      + node_group_name = "node_tuto"
+      + node_role_arn   = "arn:aws:iam::853364313656:role/eks-node-group-tuto"
+      + release_version = (known after apply)
+      + resources       = (known after apply)
+      + status          = (known after apply)
+      + subnet_ids      = [
+          + "subnet-bcd68097",
+          + "subnet-f006efba",
+        ]
+      + version         = (known after apply)
+
+      + scaling_config {
+          + desired_size = 1
+          + max_size     = 1
+          + min_size     = 1
+        }
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+aws_eks_node_group.node: Creating...
+aws_eks_node_group.node: Still creating... [10s elapsed]
+aws_eks_node_group.node: Still creating... [20s elapsed]
+aws_eks_node_group.node: Still creating... [30s elapsed]
+aws_eks_node_group.node: Still creating... [40s elapsed]
+aws_eks_node_group.node: Still creating... [50s elapsed]
+aws_eks_node_group.node: Still creating... [1m0s elapsed]
+aws_eks_node_group.node: Still creating... [1m10s elapsed]
+aws_eks_node_group.node: Still creating... [1m20s elapsed]
+aws_eks_node_group.node: Still creating... [1m30s elapsed]
+aws_eks_node_group.node: Still creating... [1m40s elapsed]
+aws_eks_node_group.node: Still creating... [1m50s elapsed]
+aws_eks_node_group.node: Still creating... [2m0s elapsed]
+aws_eks_node_group.node: Creation complete after 2m2s [id=eks_cluster_tuto:node_tuto]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+eks_cluster_certificat_authority = [
+  {
+    "data" = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJd01EWXlPVEEyTURVd01sb1hEVE13TURZeU56QTJNRFV3TWxvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTFRsCjdJdkJ1Nk1YTm1rQTVBU1o1c0hkVnFmaEorQ3NKdkJIT3kxOVBqamVOeWNPcnRGeXBweGs5bFdmN0hrNkJvOGIKM0JJYXVWcElKSGpEbHlnT29xT2p2WkhJS1NBU29kRTE0eUpLb1NWOXhGd2YxRThOMmNxdDEzQ3U4MHNWeFpFQgpSV2R1cURWUXhkcEsxSWIwemRiUE5RbHk0U0lrNjM3ZGZTWkxESmRPOUpjTkR3ZisveDErZDFuUFFycnVYMWVaClE0QzF1YWR1REc5cWFCMWk3NkdCby9QNE02eTR3Wmp4VmJjckU5eVQ1bUpFbm12d2VESVcyZDRlYzJ6Q0pIMUgKc0JBYnpTeTE1UmErV201T2N5QjhXTzFPdDRXRmpYUCswZkxLd3F0NElBclkwZmR3RlBmNEo4bHdwUkE0aS9lSQpkZ1BtYWNJcmI2V0x0aXNCZGpFQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFGVVVPRnRHZXlKVnhoamZoRTJKWW9TYTN6TzYKT2p0QlBXYlMrLy95R0RwOUF5eDkveUtLbTlra2RmVmM0VjRLUHdiZzRuOEZiMHZzMlI4TW5HVjlSQTZMeC94OQpKQk4yRUN1SkdmdkVvNzRqc2F0UjYyZnZScEU2Wk9WV0pURGZRM0VsK1Qxc3J4UzA0Q2djemprNnNYWEJGQUc0Ck41YUIxSW5Fayt6QnMzUjZSL1RmT1ZqczRKc094ZVlaZGVzYXlmaEZWREVsRHF4VFFYajQwVmFheU9XNTNYNHYKWWNOVjMvc0JOb0Y3WGsrVUwrLzNXRG4vNm5GV2ZYeHh1SGJiZ3o5WmdtOCswaVdIM0xZT200NUY2RCszcVFhTgptekFuNG40RmdsZjVIZWNSZDBrUDJGYTB6cFJveUhZdHdscXg4MXI1Q1p4SVpuNGRQUktLYmQxNUZUZz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+  },
+]
+eks_cluster_endpoint = https://F568284856E2D69947546DD69C78AEB5.gr7.us-west-2.eks.amazonaws.com
