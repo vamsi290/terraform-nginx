@@ -8,5 +8,5 @@ Steps to execute terraform scripts:
        2. terraform plan
        3. terraform apply
  4. To deploy nginx into kubernetes execute following command
-       1. kubectl apply -f Exercise2/*
+       1. Kubectl apply -f Exercise2/*
       
